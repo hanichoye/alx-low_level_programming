@@ -11,9 +11,9 @@
 int main(void)
 {
 	int i;
-	char f[] = "Fuzz";
-	char b[] = "Buzz";
-	char fb[] = "FizzBuzz";
+	char f[] = ("Fuzz");
+	char b[] = ("Buzz");
+	char fb[] = ("FizzBuzz");
 
 	for (i = 1; i <= 100; i++)
 	{
