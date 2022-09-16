@@ -1,12 +1,15 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _isupper - check if a letter is upper
- * @c: The number to be checked
+ * _isupper - function tot check if character is uppercase
  *
- * Return: 1 for upper letter or 0 for any else
+ * @c: checks input of function
+ *
+ * Return: returns 1 if 'c' is uppercase otherwise always 0 (success)
  */
-int _isupper (int c)
+
+int _isupper(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
