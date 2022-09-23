@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * infinite_aadd - adds two numbers
+ * infinite_add - adds two numbers
  * @n1: first number
  * @n2: second number
  * @r: buffer for result
@@ -37,11 +37,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	r[k] = '\0';
 	if (i >= 0 || j >= 0 || m)
 		return (0);
-	for (k -= i, 1 = 0; 1 < k; k--, 1++)
+	for (k -= 1, l = 0; l < k; k--, l++)
 	{
 		m = r[k];
-		r[k] = r[1];
-		r[1] = m;
+		r[k] = r[l];
+		r[l] = m;
 	}
 	return (r);
 }
