@@ -1,12 +1,10 @@
-#include <stdio.h>                                               
+#include <stdio.h>
 
-                                                                 
-
-/**                                                              
- * main - print possible combo of 3                              
- *
+/**
+ * main - print possible combo of 3.
  * Return: returns zero at the end
  */
+
 int main(void)
 {
 	int i, p, m;
@@ -15,19 +13,19 @@ int main(void)
 	{
 		for (p = 1; p <= 9; p++)
 		{
-			for (n = 2; m <= 9; m++)
+			for (m = 2; m <= 9; m++)
 			{
-			if (m > p && p > i)
-			{
-			  	putchar(i + '0');
-				putchar(p + '0');
-				putchar(m + '0');
-				       if (i != 7)
+				if (m > p && p > i && i > m)
 				{
-		                       putchar(',');
-	       			       putchar(' ');
+					putchar(m + '0');
+					putchar(p + '0');
+					putchar(i + '0');
+					if (m != 0)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-			}
 			}
 		}
 	}
