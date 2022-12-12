@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - print single digit numbers starting from 0
+ * main - prints all possible different combinations of two digits.
  *
- * Return: returns zero at the end
+ * Return: Always 0 (success)
+ *
  */
 
 int main(void)
@@ -12,9 +13,9 @@ int main(void)
 	int ones = '0';
 	int tens = '0';
 
-	for (tens = '0'; tens <= '0'; tens++)/* prints ten digit*/
+	for (tens = '0'; tens <= '9'; tens++)/* prints ten digit*/
 	{
-		for (ones = '0'; ones <= '0'; ones++)/* prints ten digit*/
+		for (ones = '0'; ones <= '9'; ones++)/* prints ten digit*/
 		{
 			if (!((ones == tens) || (tens > ones)))/* eliminates reputition*/
 			{
