@@ -5,19 +5,22 @@
  *
  * Return: returns zero at the end
  */
-int main(void)
-{
-	int i, j;
 
-	for (i = 1; i <= 9; i++)
+int main(void)
+
+{
+	int ones = '0';
+	int tens = '0';
+
+	for (tens = '0'; tens <= '0'; tens++)/* prints ten digit*/
 	{
-		for (j = 1; j <= 9; j++)
+		for (ones = '0'; ones <= '0'; ones++)/* prints ten digit*/
 		{
-			if (j > i)
+			if (!((ones == tens) || (tens > ones)))/* eliminates reputition*/
 			{
-				putchar(i + '0');
-				putchar(j + '0');
-				if (i != 0)
+				putchar(tens);
+				putchar(ones);
+				if (!(ones == '9' && tens == '8'))/*addes comma and space*/
 				{
 					putchar(',');
 					putchar(' ');
@@ -26,6 +29,7 @@ int main(void)
 		}
 	}
 	putchar('\n');
+
 	return (0);
 }
 
