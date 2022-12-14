@@ -4,25 +4,25 @@
  * print_sign - function to check for a sign of a number
  *
  * @n: Is the int that will use for the argument of the function
- * Return: 0
+ * Return: 1 for positive num, -1 for negative num or zero for anything else
  */
+
 int print_sign(int n)
+
 {
 	if (n > 0)
 	{
-	_putchar('+');
-	return (1);
+		_putchar(43);
+		return (1);
 	}
 	else if (n < 0)
 	{
-	_putchar('-');
-	return (-1);
+		_putchar(45);
+		return (-1);
 	}
 	else
 	{
-	_putchar('0');
-
-	return (0);
+		_putchar(48);
+		return (0);
 	}
 }
-       	
