@@ -1,16 +1,19 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * _abs - function thet computes the absolute value of an integer
- * @c: Is the int that will use for the argument of the function
- * Return: 0
+ * _abs - computes the absolute value of an integer
+ * @c: The number to be computed.
+ * Return: Absolute value of number or zero
  */
 int _abs(int c)
 {
-	if (c > 0 || c == 0)
+
+	if (c < 0)
 	{
-	return (c);
+	int abs_val;
+
+	abs_val = c * -1;
+	return (abs_val);
 	}
-	else
-	return (c * -1);
-}	
+	return (c);
+}
