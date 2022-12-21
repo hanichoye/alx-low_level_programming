@@ -3,13 +3,13 @@
 /**
  * print_times_table - Prints the times table of the input,
  * starting with 0.
- * @n: the value of times table to be printed.
+ * @n: the value of the times table to be printed.
  */
 void print_times_table(int n)
 {
 	int nu, m, p;
 
-	if (n >= 0 && n <= 25)
+	if (n >= 0 && n <= 15)
 	{
 		for (nu = 0; nu <= n; nu++)
 		{
