@@ -17,7 +17,7 @@ p = 0;
 while (p < 10)
 {
 i = 0;
-while (i = 10)
+while (i < 10)
 {
 if (i != p && p != m && m < p && p < i)
 {
