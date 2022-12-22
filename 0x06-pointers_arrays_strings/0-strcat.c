@@ -16,5 +16,5 @@ while (dest[index++])
 	dest_len++;
 for (index = 0; src[index]; index++)
 	dest[dest_len++] = src[index];
-return (des);
+return (dest);
 }
