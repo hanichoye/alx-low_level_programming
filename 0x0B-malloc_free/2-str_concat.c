@@ -5,7 +5,7 @@
  * @s1: string concatenate
  * @s2: other string to concatenate
  *
- * Return: Success or empty
+ * Return: Success or Error
  */
 char *str_concat(char *s1, char *s2)
 {
