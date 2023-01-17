@@ -1,48 +1,52 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
- * *str_concat - Write a function that concatenates two strings
- * @s1: pointer to string
- * @s2: Pointer to string
- *
- * Return: Pointer to newly allocated memory which
- * has s1, s2 and null byte.
- * Null on Failure.
+ * _strlen - count array
+ * @s: array of elements
+ * Return: i
+ */
+int _strlen(char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+/**
+ * *str_concat - back a pointer to array
+ * @s1: Array one
+ * @s2: Array two
+ * Return: Always an array
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *nstr;
 	unsigned int i, j, len1, len2;
+	char *nstr;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	size = (_strlen(s1) + _strlen(s2) + 1);
 
-	len1 = 0;
-	while (s1[len1] != '\0')
-		len1++;
-	len2 = 0;
-	while (s2[len2] != '\0')
-		len2++;
-	size = len1 + len2;
-	nstr = malloc((sizeof(char) * size) + 1);
-	if (nstr == NULL)
+	dst = (char *) malloc(size * sizeof(char));
+
+	if (dst == 0)
+	{
 		return (NULL);
-	i = 0;
-	while (i < len1)
+	}
+	
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(dst + i) = *(s1 + i);
+
+	for (j = 0; *(s2 + j) != '\0'; j++)
 	{
-		nstr[i] = s1[i];
+		*(dst + i) = *(s2 + j);
 		i++;
 	}
-	j = 0;
-	while (i <= size)
-	{
-		nstr[i] = s2[j];
-		i++;
-		j++;
-	}
-	return (nstr);
+	return (dst);
 }
