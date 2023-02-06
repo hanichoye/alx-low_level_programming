@@ -46,11 +46,11 @@ void close_file(int fd)
  * @argc: The number of argument supplied to the program.
  * @argv: An array of pointers to the arguments.
  *
- * Return: 0 o success.
+ * Return: 0 on success.
  *
  * Desription: If the argument count is incorrect - exit code 97.
  *             If file_from does not exist or cannot be read - exit code 98.
- *             if file_to cannot be created or written to - exit code 99
+ *             If file_to cannot be created or written to - exit code 99.
  *             If file_to or file_from cannot be closed - exit code 100.
  */
 int main(int argc, char *argv[])
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	buffer = create_buffer(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	r = read(from, buffer, 1024);
-	to = open(argv[2], O_CREAT | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (from == -1 || r == -1)
@@ -75,14 +75,14 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
-			exit(99);
+			exit(98);
 		}
 
 		w =  write(to, buffer, r);
 		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", argv[1]);
+				"Error: Can't write to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
 		}
