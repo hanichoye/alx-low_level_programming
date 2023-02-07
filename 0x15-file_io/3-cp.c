@@ -25,6 +25,7 @@ char *create_buffer(char *file)
 
 	return (buffer);
 }
+
 /**
  * close_file - Closes file description.
  * @fd: The file descriptor to be closed.
@@ -41,6 +42,7 @@ void close_file(int fd)
 		exit(100);
 	}
 }
+
 /**
  * main - Copies the contents of a file to another file.
  * @argc: The number of argument supplied to the program.
@@ -60,7 +62,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
