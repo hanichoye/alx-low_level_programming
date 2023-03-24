@@ -1,18 +1,14 @@
 #include "main.h"
+
 /**
- * _isdigit - checkes if the no is b/n 0 to 9
- * @c: input no
- * Return: 1 if is a number (0 to 9),0 in the other case
+ * _isdigit - returns if the character is a digit or not
+ * @c: the character being tested
+ * Return: 1 for a digit, 0 for not a digit
  */
 int _isdigit(int c)
 {
-if (c >= 48 && c <= 57)
-{
-return (1);
-}
-else
-{
-return (0);
-}
-_putchar('\n');
+	if ('0' <= c && c <= '9')
+		return (1);
+	else
+		return (0);
 }
